@@ -1,0 +1,42 @@
+function App() {
+  return (
+    <div >
+       <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Borrows
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
+
+    <Container maxWidth="md">
+      <Paper>
+        <Box
+        display={"flex"}
+         sx={{
+           marginTop: 2,
+           paddingX: 2,
+           paddingY: 1,
+         }}>
+
+          <h1>Create User</h1>
+          <hr/>
+        </Box>
+      </Paper>
+    </Container>
+    </div>
+  );
+}
+export default App;

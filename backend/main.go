@@ -15,12 +15,12 @@ func main() {
 
 	r := gin.Default()
 	// r.Use(CORSMiddleware())
-
+	
 	router := r.Group("/")
 	{
 		// router.Use(middlewares.Authorizes())
 		{	
-			//-------------------------------------------------------------------------------------//Book//-----------------------------------------------------------------------------------//
+			//-------------------------------------------------------------------------------------//xxxBook//-----------------------------------------------------------------------------------//
 			// shelf Routes
 			router.GET("/shelves", controller.ListShelf)
 			router.GET("/shelf/:id", controller.GetShelf)
@@ -55,9 +55,9 @@ func main() {
 			router.POST("/books", controller.CreateBook)
 			router.PATCH("/books", controller.UpdateBook)
 			router.DELETE("/books/:id", controller.DeleteBook)
-			//-------------------------------------------------------------------------------------//Book//-----------------------------------------------------------------------------------//
+			//-------------------------------------------------------------------------------------//xxBook//-----------------------------------------------------------------------------------//
 
-			//-------------------------------------------------------------------------------------//User//-----------------------------------------------------------------------------------//
+			//-------------------------------------------------------------------------------------//xxxUser//-----------------------------------------------------------------------------------//
 			//user routes
 			router.GET("/users", controller.ListUser)
 			router.GET("/user/:id", controller.GetUser)
@@ -92,15 +92,139 @@ func main() {
 			router.POST("/roles", controller.CreateUser)
 			router.PATCH("/roles", controller.UpdateRole)
 			router.DELETE("/roles/:id", controller.DeleteRole)
-			//-------------------------------------------------------------------------------------//User//-----------------------------------------------------------------------------------//
+			//-------------------------------------------------------------------------------------//xxUser//-----------------------------------------------------------------------------------//
 
-			//-------------------------------------------------------------------------------------//Borrow//---------------------------------------------------------------------------------//
+			//-------------------------------------------------------------------------------------//xxxBorrow//---------------------------------------------------------------------------------//
 			router.GET("/borrows", controller.ListBorrows)
 			router.GET("/borrow/:id", controller.GetBorrows)
 			router.POST("/borrows", controller.CreateBorrow)
 			router.PATCH("/borrows", controller.UpdateBorrow)
 			router.DELETE("/borrows/:id", controller.DeleteBorrow)
-			//-------------------------------------------------------------------------------------//Borrow//---------------------------------------------------------------------------------//
+			//-------------------------------------------------------------------------------------//xxBorrow//---------------------------------------------------------------------------------//
+
+			//-------------------------------------------------------------------------------------//xxxBill//---------------------------------------------------------------------------------//
+			//bill route
+			router.GET("/bills", controller.ListBills)
+			router.GET("/bill/:id", controller.GetBill)
+			router.POST("/bills", controller.CreateBill)
+			router.PATCH("/bills", controller.UpdateBill)
+			router.DELETE("/bills/:id", controller.DeleteBill)
+			//-------------------------------------------------------------------------------------//xxBill//---------------------------------------------------------------------------------//
+			
+			//-------------------------------------------------------------------------------------//xxxReseachRoom//---------------------------------------------------------------------------------//
+			// Computer_os Routes
+			router.GET("/computer_oss", controller.ListComputer_oss)
+			router.GET("/computer_os/:id", controller.GetComputer_os)
+			router.POST("/computer_oss", controller.CreateComputer_os)
+			router.PATCH("/computer_oss", controller.UpdateComputer_os)
+			router.DELETE("/computer_oss/:id", controller.DeleteComputer_os)
+
+			// Computer_reservation Routes
+			router.GET("/computer_reservations", controller.ListComputer_reservations)
+			router.GET("/computer_reservation/:id", controller.GetComputer_reservation)
+			// api.GET("/playlist/watched/user/:id", controller.GetPlaylistWatchedByUser)
+			router.POST("/computer_reservations", controller.CreateComputer_reservation)
+			router.PATCH("/computer_reservations", controller.UpdateComputer_reservation)
+			router.DELETE("/computer_reservations/:id", controller.DeleteComputer_reservation)
+
+			// Computer Routes
+			router.GET("/computers", controller.ListComputers)
+			router.GET("/computer/:id", controller.GetComputer)
+			router.POST("/computers", controller.CreateComputer)
+			router.PATCH("/computers", controller.UpdateComputer)
+			router.DELETE("/computers/:id", controller.DeleteComputer)
+
+			// Time_com Routes
+			router.GET("/time_coms", controller.ListTime_coms)
+			router.GET("/time_com/:id", controller.GetTime_com)
+			router.POST("/time_coms", controller.CreateTime_com)
+			router.PATCH("/time_coms", controller.UpdateTime_com)
+			router.DELETE("/time_coms/:id", controller.DeleteTime_com)
+			//-------------------------------------------------------------------------------------//xxReseachRoom//---------------------------------------------------------------------------------//
+			
+			//-------------------------------------------------------------------------------------//xxxProblem//-------------------------------------------------------------//
+			router.GET("/place_class", controller.ListPlace_Class)
+			router.GET("/place_class/:id", controller.GetPlace_Class)
+			router.POST("/place_class", controller.CreatePlace_Class)
+			router.PATCH("/place_class", controller.UpdatePlace_Class)
+			router.DELETE("/place_class/:id", controller.DeletePlace_Class)
+
+			router.GET("/problem", controller.ListProblems)
+			router.GET("/problem/:id", controller.GetProblem)
+			router.POST("/problem", controller.CreateProblem)
+			router.PATCH("/problem", controller.UpdateProblem)
+			router.DELETE("/problem/:id", controller.DeleteProblem)
+
+			router.GET("/problemreport", controller.ListProblemReports)
+			router.GET("/problemreport/:id", controller.GetProblemReport)
+			router.POST("/problemreport", controller.CreateProblemReport)
+			router.PATCH("/problemreport", controller.UpdateProblemReport)
+			router.DELETE("/problemreport/:id", controller.DeleteProblemReport)
+
+			router.GET("/readingzone", controller.ListReadingZones)
+			router.GET("/readingzone/:id", controller.GetReadingZone)
+			router.POST("/readingzone", controller.CreateReadingZone)
+			router.PATCH("/readingzone", controller.UpdateReadingZone)
+			router.DELETE("/readingzone/:id", controller.DeleteReadingZone)
+
+			router.GET("/researchroom", controller.ListResearchRooms)
+			router.GET("/researchroom/:id", controller.GetResearchRoom)
+			router.POST("/researchroom", controller.CreateResearchRoom)
+			router.PATCH("/researchroom", controller.UpdateResearchRoom)
+			router.DELETE("/researchroom/:id", controller.DeleteResearchRoom)
+
+			router.GET("/toilet", controller.ListToilets)
+			router.GET("/toilet/:id", controller.GetToilet)
+			router.POST("/toilet", controller.CreateToilet)
+			router.PATCH("/toilet", controller.UpdateToilet)
+			router.DELETE("/toilet/:id", controller.DeleteToilet)
+			//-------------------------------------------------------------------------------------//xxProblem//-------------------------------------------------------------//
+
+			//-------------------------------------------------------------------------------------//xxReservation//-------------------------------------------------------------//
+			// Research_Room Routes
+			router.GET("/researchrooms", controller.ListResearchRooms)
+			router.GET("/researchroom/:id", controller.GetResearchRoom)
+			router.POST("/researchrooms", controller.CreateResearchRoom)
+			router.PATCH("/researchrooms", controller.UpdateResearchRoom)
+			router.DELETE("/researchrooms/:id", controller.DeleteResearchRoom)
+
+			// Equipment Routes
+			router.GET("/equipments", controller.ListEquipments)
+			router.GET("/equipment/:id", controller.GetEquipment)
+			router.POST("/equipments", controller.CreateEquipment)
+			router.PATCH("/equipments", controller.UpdateEquipment)
+			router.DELETE("/equipments/:id", controller.DeleteEquipment)
+
+			// Room_Type Routes
+			router.GET("/roomtypes", controller.ListRoomTypes)
+			router.GET("/roomtype/:id", controller.GetRoomType)
+			router.POST("/roomtypes", controller.CreateRoomType)
+			router.PATCH("/roomtypes", controller.UpdateRoomType)
+			router.DELETE("/roomtypes/:id", controller.DeleteRoomType)
+
+			// AddOn Routes
+			router.GET("/addons", controller.ListAddOns)
+			router.GET("/addon/:id", controller.GetAddOn)
+			router.POST("/addons", controller.CreateAddOn)
+			router.PATCH("/addons", controller.UpdateAddOn)
+			router.DELETE("/addons/:id", controller.DeleteAddOn)
+
+			// Timeroom Routes
+			router.GET("/timerooms", controller.ListTimes)
+			router.GET("/timeroom/:id", controller.GetTime)
+			router.POST("/timerooms", controller.CreateTime)
+			router.PATCH("/timerooms", controller.UpdateTime)
+			router.DELETE("/timerooms/:id", controller.DeleteTime)
+
+			// Research_Room_Reservation_Record Routes
+			router.GET("/researchroomreservationrecords", controller.ListResearchRoomReservationRecords)
+			router.GET("/researchroomreservationrecord/:id", controller.GetResearchRoomReservationRecord)
+			router.POST("researchroomreservationrecords", controller.CreateResearchRoomReservationRecord)
+			router.PATCH("/researchroomreservationrecords", controller.UpdateResearchRoomReservationRecord)
+			router.DELETE("/researchroomreservationrecords/:id", controller.DeleteResearchRoomReservationRecord)
+
+			//-------------------------------------------------------------------------------------//xxReservation//-------------------------------------------------------------//
+		
 		}
 	}
 
